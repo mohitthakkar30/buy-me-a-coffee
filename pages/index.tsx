@@ -15,7 +15,7 @@ const Home: NextPage = () => {
   }
   const sendFund = async()=>{
     const signer:any = await fetchSigner();    
-    console.log("signer?.provider", signer);
+    
     try{
       const fundMeContract = new ethers.Contract("0x596e39c428e2255437D416eB818f81ae88FD9587",fundMe,signer);
       await fundMeContract.addFund({value: ethers.utils.parseEther(amount)});
